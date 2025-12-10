@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["justin@wiebes.world"]
 
   spec.summary       = "Automatic full and incremental Postgres backups and restores in Ruby on Rails. Save to local storage or an S3 bucket."
-  spec.description   = "A longer description of your gem"
+  spec.description   = "A Ruby gem for managing PostgreSQL incremental backups using pg_basebackup and pg_combinebackup. Supports local and S3 storage, WAL archiving, point-in-time recovery (PITR), and automated scheduling. Designed to replace managed database backup solutions like Heroku Postgres."
   spec.homepage      = "https://github.com/justwiebe/managed-pg-backups"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
@@ -25,7 +25,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Runtime dependencies
-  # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency "aws-sdk-s3", "~> 1.0"
+  spec.add_dependency "rufus-scheduler", "~> 3.9"
 
   # Development dependencies
   spec.add_development_dependency "rspec", "~> 3.0"
